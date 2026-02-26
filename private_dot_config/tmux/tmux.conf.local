@@ -452,34 +452,36 @@ tmux_conf_uninstall_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
-# vi 모드 활성화 (스크롤/복사에 필수)
+
+# -- custom settings ----------------------------------------------------------
+
+# vi mode (required for scroll and copy)
 setw -g mode-keys vi
 
-# 마우스 스크롤 활성화
+# mouse support
 set -g mouse on
 
-# 스크롤 히스토리 늘리기 (기본 2000줄)
+# scroll history (default: 2000)
 set -g history-limit 50000
 
-# ─── 복사 모드 키 바인딩 ───────────────────────────
-# v로 선택 시작 (vi 스타일)
+# -- copy mode keybindings ----------------------------------------------------
+
+# v to begin selection (vi style)
 bind-key -T copy-mode-vi v send-keys -X begin-selection
-# y로 복사 (macOS 클립보드로)
+# y to copy to macOS clipboard
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
-# 마우스 드래그 후 자동 복사
+# copy on mouse drag
 bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
-# 우클릭 붙여넣기
+# right-click to paste
 bind ] run "pbpaste | tmux load-buffer - && tmux paste-buffer"
 
-# PowerKit plugin
-set -g @plugin 'fabioluciano/tmux-powerkit'
+# -- plugins ------------------------------------------------------------------
 
-# Basic configuration
+set -g @plugin 'fabioluciano/tmux-powerkit'
 set -g @powerkit_plugins "datetime,battery,cpu,memory,git,hostname"
 set -g @powerkit_theme "catppuccin"
 set -g @powerkit_theme_variant "mocha"
 set -g @powerkit_bar_layout "single"
-
 
 # -- custom variables ----------------------------------------------------------
 
