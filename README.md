@@ -88,3 +88,4 @@ exit                                            # back to previous directory
 | `~/.ssh/config` | SSH client config |
 | `~/.ssh/id_ed25519` | SSH private key (age-encrypted) |
 | `~/.ssh/id_ed25519.pub` | SSH public key |
+| `~/.hushlogin` | Suppress login message |
