@@ -85,3 +85,6 @@ exit                                            # back to previous directory
 | `~/.config/tmux/tmux.conf.local` | tmux config (oh-my-tmux + powerkit) |
 | `~/.gitignore-global` | Global gitignore |
 | `~/.gitconfig` | Git configuration |
+| `~/.ssh/config` | SSH client config |
+| `~/.ssh/id_ed25519` | SSH private key (age-encrypted) |
+| `~/.ssh/id_ed25519.pub` | SSH public key |
