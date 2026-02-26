@@ -80,18 +80,18 @@ exit                                            # back to previous directory
 
 ## What's managed
 
-| File | Description |
-|---|---|
-| `~/.config/tmux/tmux.conf.local` | tmux config (oh-my-tmux + powerkit) |
-| `~/.gitignore-global` | Global gitignore |
-| `~/.gitconfig` | Git configuration |
-| `~/.ssh/config` | SSH client config |
-| `~/.ssh/id_ed25519` | SSH private key (age-encrypted) |
-| `~/.ssh/id_ed25519.pub` | SSH public key |
-| `~/.hushlogin` | Suppress login message |
-| `~/.gnupg/common.conf` | GnuPG common config |
-| `~/.gnupg/gpg-agent.conf` | GPG agent config (pinentry) |
-| `~/.gnupg/public-key.asc` | GPG public key (armored export) |
-| `~/.gnupg/secret-key.asc` | GPG secret key (age-encrypted) |
-| `~/.gnupg/trustdb.gpg` | GPG trust database |
-| `~/.config/karabiner/karabiner.json` | Karabiner-Elements key remapping |
+| File | Description | Prerequisite |
+|---|---|---|
+| `~/.config/tmux/tmux.conf.local` | tmux config (oh-my-tmux + powerkit) | `tmux` `bash` ≥5.0 (brew), [gpakosz/.tmux](https://github.com/gpakosz/.tmux) (git clone), Nerd Font (cask) |
+| `~/.gitignore-global` | Global gitignore | `git` (system-installed) |
+| `~/.gitconfig` | Git configuration (GPG signing enabled) | `git` (system-installed), `gnupg` (brew) |
+| `~/.ssh/config` | SSH client config | `ssh` (system-installed) |
+| `~/.ssh/id_ed25519` | SSH private key (age-encrypted) | `ssh` (system-installed) |
+| `~/.ssh/id_ed25519.pub` | SSH public key | `ssh` (system-installed) |
+| `~/.hushlogin` | Suppress login message | system-installed |
+| `~/.gnupg/common.conf` | GnuPG common config | `gnupg` (brew) |
+| `~/.gnupg/gpg-agent.conf` | GPG agent config (pinentry) | `gnupg` `pinentry-mac` (brew) |
+| `~/.gnupg/public-key.asc` | GPG public key (armored export) | `gnupg` (brew) |
+| `~/.gnupg/secret-key.asc` | GPG secret key (age-encrypted) | `gnupg` (brew) |
+| `~/.gnupg/trustdb.gpg` | GPG trust database | `gnupg` (brew) |
+| `~/.config/karabiner/karabiner.json` | Karabiner-Elements key remapping | [Karabiner-Elements](https://karabiner-elements.pqrs.org/) (cask) |
