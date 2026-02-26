@@ -478,7 +478,7 @@ bind ] run "pbpaste | tmux load-buffer - && tmux paste-buffer"
 # -- plugins ------------------------------------------------------------------
 
 set -g @plugin 'fabioluciano/tmux-powerkit'
-set -g @powerkit_plugins "datetime,battery,cpu,memory,git,hostname"
+set -g @powerkit_plugins "datetime,battery,cpu,memory,git,ssh,uptime,hostname"
 set -g @powerkit_theme "catppuccin"
 set -g @powerkit_theme_variant "mocha"
 set -g @powerkit_bar_layout "single"
