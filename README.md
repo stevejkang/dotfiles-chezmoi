@@ -57,12 +57,12 @@ When an entire file is secret (e.g. SSH private keys, credentials.json). The fil
 
 ```bash
 # 1. Generate age key and store in 1Password
-age-keygen | op document create --title "chezmoi age key" --vault Private -
+age-keygen | op document create --title "chezmoi age key" --vault Personal -
 
 # 2. Add age config to chezmoi.toml
 #    encryption = "age"
 #    [age]
-#      identity = "{{ onepasswordDocument "chezmoi age key" "Private" }}"
+#      identity = "{{ onepasswordDocument "chezmoi age key" "Personal" }}"
 #      recipient = "age1..."  # public key from age-keygen output
 
 # 3. Add a file as encrypted
