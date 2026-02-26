@@ -84,3 +84,4 @@ exit                                            # back to previous directory
 |---|---|
 | `~/.config/tmux/tmux.conf.local` | tmux config (oh-my-tmux + powerkit) |
 | `~/.gitignore-global` | Global gitignore |
+| `~/.gitconfig` | Git configuration |

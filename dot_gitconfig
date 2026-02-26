@@ -1,0 +1,25 @@
+[user]
+	email = iam@juneyoung.io
+	name = stevejkang
+	signingkey = 85D2EA75C4BC40E8
+[core]
+	editor = vim
+	ignorecase = false
+	filemode = true
+	excludesfile = ~/.gitignore-global
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[push]
+	autoSetupRemote = true
+[pull]
+	ff = only
+[log]
+	date = iso
+[alias]
+	re = rebase --committer-date-is-author-date
+[credential]
+	helper = osxkeychain
