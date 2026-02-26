@@ -89,3 +89,8 @@ exit                                            # back to previous directory
 | `~/.ssh/id_ed25519` | SSH private key (age-encrypted) |
 | `~/.ssh/id_ed25519.pub` | SSH public key |
 | `~/.hushlogin` | Suppress login message |
+| `~/.gnupg/common.conf` | GnuPG common config |
+| `~/.gnupg/gpg-agent.conf` | GPG agent config (pinentry) |
+| `~/.gnupg/public-key.asc` | GPG public key (armored export) |
+| `~/.gnupg/secret-key.asc` | GPG secret key (age-encrypted) |
+| `~/.gnupg/trustdb.gpg` | GPG trust database |
