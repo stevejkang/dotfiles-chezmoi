@@ -94,3 +94,4 @@ exit                                            # back to previous directory
 | `~/.gnupg/public-key.asc` | GPG public key (armored export) |
 | `~/.gnupg/secret-key.asc` | GPG secret key (age-encrypted) |
 | `~/.gnupg/trustdb.gpg` | GPG trust database |
+| `~/.config/karabiner/karabiner.json` | Karabiner-Elements key remapping |
