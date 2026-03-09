@@ -31,4 +31,26 @@ When adding a new dotfile to this repo, **all three steps are required**:
 ## Secrets
 
 - **Never commit plaintext secrets.** Use chezmoi templates (`onepasswordRead`) or age encryption.
-- See the Secrets section in README.md for the two supported patterns.
+- All secrets are stored in the **Chezmoi** vault in 1Password. See README.md for naming conventions.
+
+### Choosing encryption method
+
+| Condition | Method | Example |
+|---|---|---|
+| File has a mix of plain config and secret values | **Template** (`onepasswordRead`) | `.wakatime.cfg` — only `api_key` is secret |
+| Entire file is sensitive | **Age encryption** (`chezmoi add --encrypt`) | SSH private keys, credential bundles |
+
+### Detecting secrets
+
+When adding a new file with `chezmoi add`, **always inspect the file contents first**. If any value looks like a secret, **do not add it as a plain file**. Instead:
+
+1. **Ask the user** whether the value is a secret that needs protection.
+2. If yes, determine the correct method (template vs encrypt) using the table above.
+3. Create or confirm the 1Password item in the Chezmoi vault before proceeding.
+4. Add the file as a `.tmpl` (template) or with `--encrypt` (age) accordingly.
+
+Values that should be treated as potential secrets:
+- API keys, tokens, passwords, passphrases
+- Private keys, certificates
+- Webhook URLs containing tokens
+- Any string that looks like `sk-`, `waka_`, `ghp_`, `xoxb-`, or similar prefixed credentials
