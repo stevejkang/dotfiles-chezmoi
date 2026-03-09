@@ -109,3 +109,4 @@ exit                                            # back to previous directory
 | `~/.gnupg/secret-key.asc` | GPG secret key (age-encrypted) | `gnupg` (brew) |
 | `~/.gnupg/trustdb.gpg` | GPG trust database | `gnupg` (brew) |
 | `~/.config/karabiner/karabiner.json` | Karabiner-Elements key remapping | [Karabiner-Elements](https://karabiner-elements.pqrs.org/) (cask) |
+| `~/.wakatime.cfg` | WakaTime config (API key via 1Password template) | [WakaTime](https://wakatime.com/) plugin installed |
