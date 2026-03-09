@@ -48,7 +48,7 @@ chezmoi add --template ~/.config/some-app/config.toml
 ```toml
 # source: dot_config/some-app/config.toml.tmpl
 [credential]
-  token = "{{ onepasswordRead "op://Vault/Item/token" }}"
+  token = "{{ onepasswordRead "op://Chezmoi/SomeApp/token" }}"
 ```
 
 ### Encrypt: store entire files encrypted
@@ -57,18 +57,32 @@ When an entire file is secret (e.g. SSH private keys, credentials.json). The fil
 
 ```bash
 # 1. Generate age key and store in 1Password
-age-keygen | op document create --title "chezmoi age key" --vault Personal -
+age-keygen | op document create --title "age key" --vault Chezmoi -
 
 # 2. Add age config to chezmoi.toml
 #    encryption = "age"
 #    [age]
-#      identity = "{{ onepasswordDocument "chezmoi age key" "Personal" }}"
+#      identity = "{{ onepasswordDocument "age key" "Chezmoi" }}"
 #      recipient = "age1..."  # public key from age-keygen output
 
 # 3. Add a file as encrypted
 chezmoi add --encrypt ~/.ssh/id_ed25519
 # Stored as encrypted_private_dot_ssh/private_id_ed25519.age
 ```
+
+### Naming convention (Chezmoi vault)
+
+All chezmoi-related secrets live in the **Chezmoi** vault in 1Password.
+
+| Type | Item title | Example reference |
+|---|---|---|
+| Age encryption key | `age key` | `op://Chezmoi/age key` (document) |
+| Template secret | Application name (e.g. `WakaTime`) | `op://Chezmoi/WakaTime/api key` |
+
+Rules:
+- Item title = application or purpose name, **lowercase where possible**.
+- Field name = what the config file calls it (e.g. `api key`, `token`, `secret`).
+- One item per application. Multiple fields under the same item when an app needs several secrets.
 
 ## Git workflow
 
